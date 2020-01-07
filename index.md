@@ -20,6 +20,6 @@ These 15-30 minute tutorials walk through installing, building, and using client
 
 [**Getting Started with IoTivity (Raspberry Pi kit)**](gsg-kit.md)
 
-- Experience realistic smart device usage with a Raspberry Pi kit ([purchase here](https://openconnectivity.org/developer/developer-kit), under <u>Development Resources and Solutions</u>). The kit lets you use an Android client app to control a Raspberry Pi with an add-on board that contains colored LEDs and capacitive touch buttons.
+- Experience realistic smart device usage with a Raspberry Pi kit ([purchase here](https://openconnectivity.org/developer/developer-kit), under <u>Development Resources and Solutions</u>). The kit lets you use a Linux client app to control a Raspberry Pi with an add-on board that contains colored LEDs and capacitive touch buttons.
 
 [**Digging Deeper: Next Steps for Development**](digging-deeper.md)
