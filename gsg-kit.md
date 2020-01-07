@@ -6,10 +6,10 @@
 
 ## Introduction
 
-This Getting Started guide will show you how to quickly download, build, and run IoTivity apps featuring two-way communication between an Android device and a Raspberry Pi with an add-in Pimoroni board. This simple platform enables you to quickly prototype the capabilities of your planned smart device:
+This Getting Started guide will show you how to quickly download, build, and run IoTivity apps, featuring two-way communication between a Linux device and a Raspberry Pi with an add-in Pimoroni board. This simple platform enables you to quickly prototype the capabilities of your planned smart device:
 
 - The *server*, a command-line app, runs on a smart home device, such as a smart thermostat, represented by the Raspberry Pi board.
-- The *client*, a GUI app, controls the smart device from an Android phone or tablet.
+- The *client*, a GUI app, controls the smart device from a Linux computer or tablet.
 
 The two apps talk to each other over Wi-Fi, using the OCF protocol. 
 
@@ -21,21 +21,24 @@ To carry out this tutorial, you will need the following:
 
 - Raspberry Pi board with microSD card with Raspbian OS
 - Pimoroni Explorer HAT board
-- Ethernet connection to your network for the Pi
-- Android phone or tablet on the same LAN as the Pi
+- Optional: HDMI monitor and cable for the Pi
+- Optional: USB mouse for the Pi
+- Ethernet connection between a DHCP-enabled network and the Pi
+- Linux computer or tablet on the same network as the Pi
 
-The first two items are available together in a kit [here](https://openconnectivity.org/developer/developer-kit) (under Development Resources and Solutions).
+The first two listed items are sold together as a kit [here](https://openconnectivity.org/developer/developer-kit) (scroll down, below "Development Resources and Solutions").
 
 ## Set up the Raspberry Pi
 
-1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (At this point, you don’t need the blue breadboard, but you can attach it later, with adhesive, to add other inputs and outputs to your IoTivity test setup.) 
+1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (At this point, you don’t need the blue breadboard, which may be attached later.) 
 ![OCF protocol](/Images/attach-HAT-plus-blue-board.png)
-3. Insert the micro SD card into the slot under the Pi board.
-4. Connect an Ethernet cable between the Pi board and your DHCP-enabled network.
-5. Attach the power cable to the Pi board and plug it in.
+2.	Insert the micro SD card into its slot, located under the Pi board.
+3.	Connect an Ethernet cable between the Pi board and network.
+4.	Attach the power cable to the Pi board, and plug it in.
+
    The board will boot.
 
-If you don’t want to use SSH (steps provided in the next section), attach a monitor and USB keyboard. 
+As an alternative to using SSH (steps provided in the following section), attach a monitor and USB keyboard to the Raspberry Pi. 
 
 ## Connect to the Raspberry Pi
 
@@ -43,38 +46,29 @@ If you don’t want to use SSH (steps provided in the next section), attach a mo
 
 2. Get the Raspberry Pi board’s IP address by giving this command with the host name of the Pi (or replace it with the current hostname, if you’ve changed it):
 
-   ```
-   ping raspberrypi.local
-   ```
+![ping Pi](/Images/ping-pi-local.png)
 
-   **[insert screenshot of ping command output]**
-   In the screen above, the IP address is **[fill in from screenshot]**.
+   In the screen above, the IP address is 192.168.0.30.
 
-3. Use the IP address to connect to the Pi via SSH:
+3. Connect to the Pi via SSH, using either of these commands:
 
    - For Linux or macOS, use either of these commands:
 
    ```
-   ssh pi@raspberrypi.local
+   ssh pi@raspberrypi.local #replace with current hostname if changed, OR...
    ```
 
-   ​		Replace with current hostname, if changed.
-
-   ​		OR...
+   ​		OR
 
    ```
-   ssh pi@ipaddress
+   ssh pi@ipaddress #use IP address from previous step
    ```
-
-   ​		Use IP address from previous step.
-
-   - 
-     For a Windows PC, follow the documentation in Putty or a similar terminal program to make the SSH connection.
-
+		
 4. Supply the password when prompted. Default login: 
    *username* **pi**
    *password* **raspberry**
-   **[insert screenshot of SSH prompt]**
+   
+![ssh prompt](/Images/ssh-prompt.png)
 
 You’re now ready to install IoTivity code and samples.
 
@@ -86,34 +80,66 @@ You’re now ready to install IoTivity code and samples.
    cd ~
    curl https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash
    ```
+If you’ve done this previously and get an error, you may need to delete the ~/Project-Scripts directory.
 
-2. Install the project scripts:
+2. Install manufacturer certificates:
+
+   ```
+   cd ~/iot-lite; ./manufacturer_pki.sh; cd ~
+   ```
+
+![install certificates](/Images/install-certificates.png)
+
+3. Install the project scripts:
 
    ```
    [curl]() https://openconnectivity.github.io/Project-Scripts/install.sh | bash
    ```
 
+   Rerun this script, if an error occurs.
 
-   Rerun this script if an error occurs.
-
-3. Install Pi example code, answering “y” to the many prompts:
+4. Install the repository containing sample code, answering “y” when prompted:
 
    ```
-   curl https://openconnectivity.github.io/Sample-Raspberry-Pi-Code/pi-boards/install.sh | bash
+   curl https://openconnectivity.github.io/Emulator-Code/emulator/install.sh | bash
    ```
-
 
    This script takes several minutes to run.
 
-4. Make sure changes to the PATH variable are active with this command:
+5. Build the sample project in a new directory:
 
    ```
-   source ~/.bashrc
+   create_project.sh myproject
+   cd myproject
+   cp ~/Emulator-Code/IoTivity-lite/dimming/setup.sh ./
+   ./setup.sh
+   gen.sh
+   build.sh
+   reset.sh
+   run.sh
+
    ```
+   A GUI light bulb with a switch and slider will appear in the Linux application window.
 
 ### Set up the Project Environment
 
-1. On the Pi, create a project directory:
+1. Before you begin, be sure that the Raspberry Pi is set to use your preferred keyboard. UK English is the Pi’s preset keyboard layout. To choose another keyboard layout:
+
+   ```
+   sudo raspi-config #enter the Pi account password, if prompted.
+   ```
+In the Raspberry Pi Software Configuration Tool (raspi-config) menu, choose:
+**Localisation Options** or **Internalization Options**
+**Change Keyboard Layout**
+
+Select your connected keyboard and preferred keyboard layout. For example, for American English, choose **English (US)**. Navigate through the menus to **save** and **exit** raspi-config.
+
+Then sudo reboot:
+   ```
+   sudo reboot
+   ```
+
+2. On the Pi, create a project directory:
 
    ```
    cd ~
@@ -121,14 +147,14 @@ You’re now ready to install IoTivity code and samples.
    cd workspace
    ```
 
-2. Create the IoTivity project:
+3. Create the IoTivity project:
 
    ```
-   create_project.sh]() myexample
+   /home/pi/workspace/create_project.sh myexample
    cd myexample
    ```
 
-3. Copy the sample project to the current directory and set it up:
+4. Copy the sample project to the current directory and set it up:
 
    ```
    cp ~/Sample-Raspberry-Pi-Code/IoTivity-lite/explorer-hat-pro/setup.sh .
@@ -165,37 +191,56 @@ The server app is now waiting for commands from the client app, which you’ll i
 
 ## Install and Run the Client App
 
-The sample client application is called OTGC (Onboarding Tool and Generic Client) and can run on Android. It’s prebuilt, so you’ll just side-load the APK file on your Android device.
+1.	To build otgc-linux, open a terminal window on your development PC and type:
 
-1.	Find the OTGC APK file from the USB flash drive that came with your development kit.
-You can also [download the file](https://github.com/openconnectivityfoundation/development-support/blob/master/otgc/android/otgc-debug.apk) from GitHub.
-2. Install the APK file on your Android Device.
+   ```
+   curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
+   ```
 
-   Search the web for “how to sideload APK” to find [instructions](https://www.digitaltrends.com/mobile/how-to-sideload-an-apk/). Many sites explain the process.
-3.	Launch the OTGC client on the Android device.
-4.	Click the discover button to search for OCF devices on the same network.
-**[insert screenshot of initial Android client screen, callout to discover button]**
-5.	Onboard (pair) the discovered server by clicking the + icon next to the device.
-**[insert screenshot of initial Android client screen, callout to + button]**
-If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
-6.	Once the + icon has changed to a gear, click the gear icon.
-**[insert screenshot with callout to gear]**
-7.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
-**[insert screenshot /LED section with callout to value button]**
-The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
-8.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
-**[insert screenshot]**
-Notice that the output in the OTGC app detects the touches.
-9.	Press Ctrl-C in the server terminal on the Pi to exit the server app.
+   If an error occurs, manually run the dpkg command from the setup.sh script:
+
+   ```
+   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
+   ```
+   
+   
+2. Run OTGC [define/describe] and onboard and control the emulated light on Linux. (create separate task with its own heading Click the discover button to search for OCF devices on the same network.
+
+   **[insert screenshot of Linux client screen, callout to discover button]**
+
+3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
+
+   **[insert screenshot of Linux client screen, callout to + button]**
+
+   If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
+
+4.	Once the + icon has changed to a gear, click the gear icon.
+
+   **[insert screenshot with callout to gear]**
+   
+5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
+
+   **[insert screenshot /LED section with callout to value button]**
+   
+   The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
+   
+6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
+
+   **[insert screenshot]**
+   
+   Notice that the output in the OTGC app detects the touches.
+   
+7.	Press Ctrl-C in the server terminal on the Pi to exit the server app.
 
 ## Customize the Code
 
 **[Needs detail from OCF]**
-IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory.
+
+IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
 
 The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the changes you made to the server’s capabilities in the JSON file are reflected in the client app. 
 
-1. Back up the example.json file:
+1. On your development PC, back up the example.json file:
 
    ```
    cd ~/iot-lite/
@@ -221,6 +266,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
    ```
 
 6.	As before, select the discovered device. Notice the changed capabilities.
+
 **[insert screenshot of relevant section in OTGC with callout to changes]**
 
 ## Next Steps for Development
@@ -229,7 +275,9 @@ To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 
-Create a whole separate test project (create configuration file, generate device server code, build and use). **[To be developed by OCF. This tutorial will go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch.]**
+Create a whole separate test project (create configuration file, generate device server code, build and use). 
+
+**[To be developed by OCF. This tutorial will go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch.]**
 
 ### [Development workflow reference](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 
