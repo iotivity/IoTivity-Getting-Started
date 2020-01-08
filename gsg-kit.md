@@ -30,8 +30,10 @@ The first two listed items are sold together as a kit [here](https://openconnect
 
 ## Set up the Raspberry Pi
 
-1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (At this point, you don’t need the blue breadboard, which may be attached later.) 
-![OCF protocol](/Images/attach-HAT-plus-blue-board.png)
+1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (At this point, you don’t need the blue breadboard, which may be attached later.)
+
+   ![OCF protocol](/Images/attach-HAT-plus-blue-board.png)
+
 2.	Insert the micro SD card into its slot, located under the Pi board.
 3.	Connect an Ethernet cable between the Pi board and network.
 4.	Attach the power cable to the Pi board, and plug it in.
@@ -46,7 +48,7 @@ As an alternative to using SSH (steps provided in the following section), attach
 
 2. Get the Raspberry Pi board’s IP address by giving this command with the host name of the Pi (or replace it with the current hostname, if you’ve changed it):
 
-![ping Pi](/Images/ping-pi-local.png)
+   ![ping Pi](/Images/ping-pi-local.png)
 
    In the screen above, the IP address is 192.168.0.30.
 
@@ -68,7 +70,7 @@ As an alternative to using SSH (steps provided in the following section), attach
    *username* **pi**
    *password* **raspberry**
    
-![ssh prompt](/Images/ssh-prompt.png)
+   ![ssh prompt](/Images/ssh-prompt.png)
 
 You’re now ready to install IoTivity code and samples.
 
@@ -80,7 +82,7 @@ You’re now ready to install IoTivity code and samples.
    cd ~
    curl https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash
    ```
-If you’ve done this previously and get an error, you may need to delete the ~/Project-Scripts directory.
+   If you’ve done this previously and get an error, you may need to delete the ~/Project-Scripts directory.
 
 2. Install manufacturer certificates:
 
@@ -117,8 +119,8 @@ If you’ve done this previously and get an error, you may need to delete the ~/
    build.sh
    reset.sh
    run.sh
-
    ```
+   
    A GUI light bulb with a switch and slider will appear in the Linux application window.
 
 ### Set up the Project Environment
@@ -128,13 +130,15 @@ If you’ve done this previously and get an error, you may need to delete the ~/
    ```
    sudo raspi-config #enter the Pi account password, if prompted.
    ```
-In the Raspberry Pi Software Configuration Tool (raspi-config) menu, choose:
-**Localisation Options** or **Internalization Options**
-**Change Keyboard Layout**
+   
+   In the Raspberry Pi Software Configuration Tool (raspi-config) menu, choose:
+   **Localisation Options** or **Internalization Options**
+   **Change Keyboard Layout**
 
-Select your connected keyboard and preferred keyboard layout. For example, for American English, choose **English (US)**. Navigate through the menus to **save** and **exit** raspi-config.
+   Select your connected keyboard and preferred keyboard layout. For example, for American English, choose **English (US)**. Navigate through the menus to **save** and **exit** raspi-config.
 
-Then sudo reboot:
+   Then sudo reboot:
+   
    ```
    sudo reboot
    ```
@@ -267,7 +271,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 6.	As before, select the discovered device. Notice the changed capabilities.
 
-**[insert screenshot of relevant section in OTGC with callout to changes]**
+   **[insert screenshot of relevant section in OTGC with callout to changes]**
 
 ## Next Steps for Development
 
