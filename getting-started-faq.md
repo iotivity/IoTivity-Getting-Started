@@ -9,11 +9,11 @@ If you're having issues getting started with IoTivity-Lite, these common questio
 * **I'm having issues with curl:**
   * The IoTivity-Lite installer script can be found [here](https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh).
   * The OTGC installer script can be found [here](https://github.com/openconnectivityfoundation/development-support/blob/master/otgc/linux/install.sh).
-* Both scripts can be copied to a local .sh files and executed if the curl command is failing.
+  * Both scripts can be copied to a local .sh files and executed if the curl command is failing.
 * **I'm building on Windows:**
   * Check the "Building sample applications on Windows" section of the "README.rst" file, found in the "IoTivity-constrained" directory, under the IoTivity-Lite project directory.
-* **I'm not building on Windows or Ubuntu Linux 16.04.5, and have generic toolchain issues:**
-  * Try installing Ubuntu Linux 16.04.5 or creating an Ubuntu 16.04.5 VM using VMWare Workstation (free download for non-commercial use).
+* **I'm not building on Windows or Ubuntu Linux 18, and have generic toolchain issues:**
+  * Try installing Ubuntu Linux 18 or creating an Ubuntu 18 VM using VMWare Workstation (free download for non-commercial use).
 * **I need an OCF feature that is not present in Lite**
   * Take a look at IoTivity "main," which is the older open source reference implementation of OCF Specifications 2.0.0 and prior. Get started building "main using the [IoTivity build instructions](https://wiki.iotivity.org/build_for_your_system).
 * **Is there an Android client?**
