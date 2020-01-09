@@ -15,7 +15,7 @@ The two apps talk to each other over a loopback connection, using the OCF protoc
 
 ![OCF protocol over loopback connection](/Images/ocfprotocol-loopback-connection.png)
 
-**To use Windows:** To download, build, and run on Windows PC instead, check the Iotivity [FAQ](https://wiki.iotivity.org/getting_started_troubleshooting_and_faq).
+**To use Windows:** To download, build, and run on a Windows PC instead, check the Iotivity [FAQ](https://wiki.iotivity.org/getting_started_troubleshooting_and_faq).
 
 ## Requirements
 
@@ -79,34 +79,38 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    ![onboard button](/Images/onboard-button.png)
 
-6. Change the device name, if you wish, and click OK.
+5. Change the device name, if you wish, and click OK.
 
-7. In the Generic Client tab, toggle the Value switch on and off. 
+6. In the Generic Client tab, toggle the Value switch on and off. 
 
    ![value switch](/Images/toggle-switch.png)
 
    Notice that the console output in the server terminal responds to the actions in the client. This simulates controlling your smart home device with, for example, a mobile phone client.
 
-9. Quit the client app and press Ctrl-C in the server terminal to exit the process.
+7. Quit the client app and press Ctrl-C in the server terminal to exit the process.
 
 ## Customize the Code
 
-IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. 
+***
+***
+    **[Todo OCF: This section needs verification and some detail where noted]**
+***
+***
 
-The server code you compiled and ran in this tutorial began from a file called example.json, found in the ~/iotivity-lite/ directory.
+IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
 
-The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the server changes are reflected in the client app. 
+The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the changes you made to the server’s capabilities in the JSON file are reflected in the client app. 
 
-1. Back up the example.json file:
+1. On your development PC, back up the example.json file:
 
    ```
-   cd ~/iot-lite/ 
+   cd ~/iot-lite/
    cp example.json example.json.bak
    ```
 
 2. Open the example.json file in your preferred editor. 
 
-3. **[Insert editing steps here]**
+3. **[Todo OCF: Insert here the editing changes that user will make]**
 
 4. While still in the ~/iot-lite/ directory, generate the server code, build, and run:
 
@@ -122,12 +126,16 @@ The steps below will show you how to make a simple change to the JSON file, reco
    /usr/bin/otgc.sh
    ```
 
-6. As before, select the discovered device. Notice the changed capabilities.
-   **[screenshot of new capabilities]**
+6.	As before, select the discovered device. Notice the changed capabilities.
+***
+***
+   **[Todo Concrete after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
+***
+***
 
 ## Run on Separate Devices
 
-Now that you’ve run a quick simulation on your own development PC to experience the basic flow, you can get a better picture of IoTivity capabilities by running it on a Raspberry Pi board, where you can control and read its status from an Android phone. 
+Now that you’ve run a quick simulation on your own development PC to experience the basic flow, you can get a better picture of IoTivity capabilities by running it on a Raspberry Pi board, where you can control and read its status from an Linux application. 
 
 A workshop kit includes a Pimoroni input/output board that most clearly shows the capabilities of IoTivity. If you already have a Raspberry Pi board and don’t want to order the full kit, you can run a simpler demonstration.
 
@@ -135,17 +143,26 @@ A workshop kit includes a Pimoroni input/output board that most clearly shows th
 
 Sample project code and instructions for kit including Raspberry Pi and Pimoroni Explorer HAT input/output board.
 
-### [roni]Tutorial for plain Raspberry Pi with output only
-
-Sample project code and instructions for bare Raspberry Pi board. **[To be developed by OCF]**
+### Tutorial for plain Raspberry Pi with output only
+***
+***
+**[Todo OCF: If this is a tutorial we want to support, we need this information]**
+***
+***
+Sample project code and instructions for bare Raspberry Pi board.
 
 ## Next Steps for Development
 
 To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
+***
+***
+   **[Todo OCF: Provide a suitable destination for this link. We need to link to a tutorial that goes beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
+***
+***
 
-Create a whole separate test project (create configuration file, generate device server code, build and use). **[To be developed by OCF. This tutorial will go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch.]**
+Create a whole separate test project (create configuration file, generate device server code, build and use). 
 
 ### [Development workflow reference](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 
@@ -154,3 +171,4 @@ Folder structure, recommended development flow and description of core scripts.
 ### [Detailed programming guide](https://wiki.iotivity.org/)
 
 From initializing the stack through managing scenes and details in between.
+

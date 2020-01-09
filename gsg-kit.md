@@ -210,27 +210,47 @@ The server app is now waiting for commands from the client app, which you’ll i
    
 2. Run OTGC [define/describe] and onboard and control the emulated light on Linux. (create separate task with its own heading Click the discover button to search for OCF devices on the same network.
 
-   **[insert screenshot of Linux client screen, callout to discover button]**
+***
+***
+   **[Todo Concrete: insert screenshot of Linux client screen, callout to discover button]**
+***
+***
 
 3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
 
-   **[insert screenshot of Linux client screen, callout to + button]**
+***
+***
+   **[Todo Concrete: insert screenshot of Linux client screen, callout to + button]**
+***
+***
 
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
 
 4.	Once the + icon has changed to a gear, click the gear icon.
 
-   **[insert screenshot with callout to gear]**
+***
+***
+   **[Todo Concrete: insert screenshot with callout to gear]**
+***
+***
    
 5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
 
-   **[insert screenshot /LED section with callout to value button]**
+***
+***
+   **[Todo Concrete: insert screenshot /LED section with callout to value button]**
+***
+***
    
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
    
 6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
 
-   **[insert screenshot]**
+***
+***
+   **[Todo Concrete: insert screenshot]**
+***
+***
    
    Notice that the output in the OTGC app detects the touches.
    
@@ -238,7 +258,11 @@ The server app is now waiting for commands from the client app, which you’ll i
 
 ## Customize the Code
 
-**[Needs detail from OCF]**
+***
+***
+    **[Todo OCF: This section needs verification and some detail where noted]**
+***
+***
 
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
 
@@ -253,7 +277,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 2. Open the example.json file in your preferred editor. 
 
-3. **[Insert here the editing changes that user will make]**
+3. **[Todo OCF: Insert here the editing changes that user will make]**
 
 4. While still in the ~/iot-lite/ directory, generate the server code, build, and run:
 
@@ -270,18 +294,24 @@ The steps below will show you how to make a simple change to the JSON file, reco
    ```
 
 6.	As before, select the discovered device. Notice the changed capabilities.
-
-   **[insert screenshot of relevant section in OTGC with callout to changes]**
+***
+***
+   **[Todo Concrete after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
+***
+***
 
 ## Next Steps for Development
 
 To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
+***
+***
+   **[Todo OCF: Provide a suitable destination for this link. We need to link to a tutorial that goes beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
+***
+***
 
 Create a whole separate test project (create configuration file, generate device server code, build and use). 
-
-**[To be developed by OCF. This tutorial will go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch.]**
 
 ### [Development workflow reference](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 
