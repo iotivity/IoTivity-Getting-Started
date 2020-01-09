@@ -90,7 +90,7 @@ You’re now ready to install IoTivity code and samples.
    cd ~/iot-lite; ./manufacturer_pki.sh; cd ~
    ```
 
-![install certificates](/Images/install-certificates.png)
+   ![install certificates](/Images/install-certificates.png)
 
 3. Install the project scripts:
 
@@ -196,38 +196,33 @@ The server app is now waiting for commands from the client app, which you’ll i
 ## Install and Run the Client App
 
 1.	To build otgc-linux, open a terminal window on your development PC and type:
-
+   
    ```
    curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
    ```
-
+   
    If an error occurs, manually run the dpkg command from the setup.sh script:
-
+   
    ```
    sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
    ```
    
    
 2. Run OTGC [define/describe] and onboard and control the emulated light on Linux. (create separate task with its own heading Click the discover button to search for OCF devices on the same network.
-
 ***
 ***
    **[Todo Concrete: insert screenshot of Linux client screen, callout to discover button]**
 ***
-***
-
+***   
 3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
-
 ***
 ***
    **[Todo Concrete: insert screenshot of Linux client screen, callout to + button]**
 ***
-***
-
+***   
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
-
+   
 4.	Once the + icon has changed to a gear, click the gear icon.
-
 ***
 ***
    **[Todo Concrete: insert screenshot with callout to gear]**
@@ -235,17 +230,14 @@ The server app is now waiting for commands from the client app, which you’ll i
 ***
    
 5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
-
 ***
 ***
    **[Todo Concrete: insert screenshot /LED section with callout to value button]**
 ***
-***
-   
+***   
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
    
 6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
-
 ***
 ***
    **[Todo Concrete: insert screenshot]**
@@ -259,9 +251,7 @@ The server app is now waiting for commands from the client app, which you’ll i
 ## Customize the Code
 
 ***
-***
-    **[Todo OCF: This section needs verification and some detail where noted]**
-***
+**[Todo OCF: This section needs verification and some detail where noted]**
 ***
 
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
@@ -295,9 +285,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 6.	As before, select the discovered device. Notice the changed capabilities.
 ***
-***
-   **[Todo Concrete after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
-***
+**[Todo Concrete: after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
 ***
 
 ## Next Steps for Development
@@ -306,9 +294,7 @@ To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 ***
-***
-   **[Todo OCF: Provide a suitable destination for this link. We need to link to a tutorial that goes beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
-***
+   **[Todo OCF: Provide a suitable destination for this "Development workflow tutorial" link. The tutorial would go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
 ***
 
 Create a whole separate test project (create configuration file, generate device server code, build and use). 
@@ -320,4 +306,5 @@ Folder structure, recommended development flow and description of core scripts.
 ### [Detailed programming guide](https://wiki.iotivity.org/)
 
 From initializing the stack through managing scenes and details in between.
+
 

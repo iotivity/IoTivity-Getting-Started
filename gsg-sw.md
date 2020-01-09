@@ -141,7 +141,7 @@ Sample project code and instructions for kit including Raspberry Pi and Pimoroni
 
 ### Tutorial for plain Raspberry Pi with output only
 ***
-   **[Todo OCF: If this is a tutorial we want to support, we need this information]**
+   **[Todo OCF: If we want to support a bare Raspberry Pi board, we need this tutorial information]**
 ***
 Sample project code and instructions for bare Raspberry Pi board.
 
@@ -151,7 +151,7 @@ To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 ***
-   **[Todo OCF: Provide a suitable destination for this link. We need to link to a tutorial that goes beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
+   **[Todo OCF: Provide a suitable destination for this "Development workflow tutorial" link. The tutorial would go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
 ***
 
 Create a whole separate test project (create configuration file, generate device server code, build and use). 
