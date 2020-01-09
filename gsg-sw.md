@@ -92,9 +92,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 ## Customize the Code
 
 ***
-***
-    **[Todo OCF: This section needs verification and some detail where noted]**
-***
+**[Todo OCF: This section needs verification and some detail where noted]**
 ***
 
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
@@ -128,9 +126,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 6.	As before, select the discovered device. Notice the changed capabilities.
 ***
-***
-   **[Todo Concrete after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
-***
+**[Todo Concrete: after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
 ***
 
 ## Run on Separate Devices
@@ -145,9 +141,7 @@ Sample project code and instructions for kit including Raspberry Pi and Pimoroni
 
 ### Tutorial for plain Raspberry Pi with output only
 ***
-***
-**[Todo OCF: If this is a tutorial we want to support, we need this information]**
-***
+   **[Todo OCF: If this is a tutorial we want to support, we need this information]**
 ***
 Sample project code and instructions for bare Raspberry Pi board.
 
@@ -157,9 +151,7 @@ To learn more about developing IoT devices with IoTivity, read the following:
 
 ### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
 ***
-***
    **[Todo OCF: Provide a suitable destination for this link. We need to link to a tutorial that goes beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
-***
 ***
 
 Create a whole separate test project (create configuration file, generate device server code, build and use). 
