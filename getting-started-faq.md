@@ -10,6 +10,7 @@ If you're having issues getting started with IoTivity-Lite, these common questio
   * The IoTivity-Lite installer script can be found [here](https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh).
   * The OTGC installer script can be found [here](https://github.com/openconnectivityfoundation/development-support/blob/master/otgc/linux/install.sh).
   * Both scripts can be copied to a local .sh files and executed if the curl command is failing.
+  * Ran all scripts as superuser.
 * **I'm building on Windows:**
   * Check the "Building sample applications on Windows" section of the "README.rst" file, found in the "IoTivity-constrained" directory, under the IoTivity-Lite project directory.
 * **I'm not building on Windows or Ubuntu Linux 18, and have generic toolchain issues:**
