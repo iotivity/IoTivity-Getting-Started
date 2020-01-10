@@ -233,10 +233,9 @@ The server app is now waiting for commands from the client app, which you’ll i
 ***
    **[Todo Concrete: insert screenshot]**
 ***
-
    Notice that the output in the OTGC app detects the touches.
    
-7.	Press Ctrl-C in the server terminal on the Pi to exit the server app.
+7. Press Ctrl-C in the server terminal on the Pi to exit the server app.
 
 ## Customize the Code
 
