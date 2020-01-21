@@ -40,23 +40,19 @@ The first two listed items are sold together as a kit [here](https://openconnect
 
    The board will boot.
 
-## Connect to the Raspberry Pi
+As an alternative to using SSH (steps provided in the following section), attach a monitor and USB keyboard to the Raspberry Pi. 
 
-As an alternative to using SSH (per steps provided in this section), attach a monitor and USB keyboard to the Raspberry Pi. 
+## Connect to the Raspberry Pi
 
 1. Open a terminal on your development PC.
 
-2. Get the Raspberry Pi board’s IP address by giving this command, then pressing ctrl-C. Use the host name of the Pi (or replace with the current hostname, if Pi name had been changed):
-
-   ```
-   ping raspberrypi.local
-   ```
+2. Get the Raspberry Pi board’s IP address by giving this command with the host name of the Pi (or replace it with the current hostname, if you’ve changed it):
 
    ![ping Pi](/Images/ping-pi-local.png)
 
    In the screen above, the IP address is 192.168.0.30.
 
-4. Connect to the Pi via SSH, using either of these commands:
+3. Connect to the Pi via SSH, using either of these commands:
 
    For Linux or macOS, use either of these commands:
 
@@ -69,18 +65,18 @@ As an alternative to using SSH (per steps provided in this section), attach a mo
    ```
    ssh pi@ipaddress #use IP address from previous step
    ```
-
-5. Supply the password when prompted. Default login: 
+		
+4. Supply the password when prompted. Default login: 
    *username* **pi**
    *password* **raspberry**
-
+   
    ![ssh prompt](/Images/ssh-prompt.png)
 
 You’re now ready to install IoTivity code and samples.
 
 ## Install IoTivity and Pi Samples
 
-1. Continuing on your development PC, from the SSH prompt, go to the home directory and install IoTivity:
+1. From the SSH prompt, go to the home directory and install IoTivity:
 
    ```
    cd ~
@@ -219,18 +215,18 @@ The server app is now waiting for commands from the client app, which you’ll i
 3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
 ***
    **[Todo Concrete: insert screenshot of Linux client screen, callout to + button]**
-***
+***   
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
 
 4.	Once the + icon has changed to a gear, click the gear icon.
 ***
    **[Todo Concrete: insert screenshot with callout to gear]**
 ***
-
+   
 5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
 ***
    **[Todo Concrete: insert screenshot /LED section with callout to value button]**
-***
+***   
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
 
 6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
@@ -240,7 +236,7 @@ The server app is now waiting for commands from the client app, which you’ll i
 ***
 
    Notice that the output in the OTGC app detects the touches.
-
+   
 7. Press Ctrl-C in the server terminal on the Pi to exit the server app.
 
 ## Customize the Code

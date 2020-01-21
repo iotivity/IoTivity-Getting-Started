@@ -87,7 +87,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    Notice that the console output in the server terminal responds to the actions in the client. This simulates controlling your smart home device with, for example, a mobile phone client.
 
-7. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
+7. Quit the client app and press Ctrl-C in the server terminal to exit the process.
 
 ## Customize the Code
 
@@ -131,9 +131,9 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 ## Run on Separate Devices
 
-Now that you’ve run a quick simulation on your own development PC and experienced the basic flow, you can get a better picture of IoTivity capabilities by running it on a Raspberry Pi board, where you can control and read its status from a Linux application. 
+Now that you’ve run a quick simulation on your own development PC to experience the basic flow, you can get a better picture of IoTivity capabilities by running it on a Raspberry Pi board, where you can control and read its status from an Linux application. 
 
-A workshop kit includes a Pimoroni input/output board that is used to demonstrate the capabilities of IoTivity. If you already have a Raspberry Pi board and don’t want to order the full kit, you can run a simpler demonstration.
+A workshop kit includes a Pimoroni input/output board that most clearly shows the capabilities of IoTivity. If you already have a Raspberry Pi board and don’t want to order the full kit, you can run a simpler demonstration.
 
 ### [Tutorial for Raspberry Pi kit with input/output](gsg-kit.md)
 
@@ -162,5 +162,5 @@ Folder structure, recommended development flow and description of core scripts.
 
 ### [Detailed programming guide](https://wiki.iotivity.org/)
 
-From initializing the stack, through managing scenes and details in between.
+From initializing the stack through managing scenes and details in between.
 
