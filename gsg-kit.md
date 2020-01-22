@@ -55,6 +55,8 @@ As an alternative to using SSH (per steps provided in this section), attach a mo
    ![ping Pi](/Images/ping-pi-local.png)
 
    In the screen above, the IP address is 192.168.0.30.
+   
+   Sometimes the ping command doesn't reach raspberrypi.local due to DNS issues. An alternative is to connect a keyboard and monitor to the Pi and run the ifconfig command in the terminal.
 
 4. Connect to the Pi via SSH, using either of these commands:
 
@@ -283,23 +285,10 @@ The steps below will show you how to make a simple change to the JSON file, reco
 **[Todo Concrete: after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
 ***
 
-## Next Steps for Development
+## Digging deeper: Next steps for development
 
-To learn more about developing IoT devices with IoTivity, read the following:
+Now that you've created a device simulation based on IoTivity, you're read to dig deeper to explore other platforms and learn how to apply IoTivity to your own platform and devices.
 
-### [Development workflow tutorial](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
-***
-   **[Todo OCF: Provide a suitable destination for this "Development workflow tutorial" link. The tutorial would go beyond the simple Customize the Code exercise above. It will walk the developer through creating a new project from scratch. Is this the PowerPoint translated by OCF into a PDF or markdown?]**
-***
-
-Create a whole separate test project (create configuration file, generate device server code, build and use). 
-
-### [Development workflow reference](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/Readme.md)
-
-Folder structure, recommended development flow and description of core scripts.
-
-### [Detailed programming guide](https://wiki.iotivity.org/)
-
-From initializing the stack through managing scenes and details in between.
+[**Digging Deeper**](digging-deeper.md)
 
 

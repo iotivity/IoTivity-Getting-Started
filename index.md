@@ -6,7 +6,7 @@
 
 IoTivity is an open source framework that implements the [OCF](https://openconnectivity.org) (Open Connectivity Foundation) protocol for easy, secure device-to-device communication for IoT devices. IoTivity includes the following:
 
-- A reference implementation of **client software** (e.g., a OTGC Linux client or Android app for controlling a smart home device)
+- A reference implementation of **client software** -- for exampe, the OTGC (Onboarding Tool and Generic Client) on Linux or Android app for controlling a smart home device
 - A reference implementation **server software** that runs on the actual IoT device
 - **Tools that generate code** for the server software, based on a JSON file that you will create to describe your device’s capabilities
 
@@ -16,7 +16,7 @@ These 15-30 minute tutorials walk through installing, building, and using client
 
 [**Getting Started with IoTivity (Device Simulation)**](gsg-sw.md)
 
-- Quickly simulates smart device usage by running client and server apps on the same PC, using the OCF protocol to communicate over loopback.
+- Quickly simulates smart device usage by running client and server apps on the same Linux PC, using the OCF protocol to communicate over loopback.
 
 [**Getting Started with IoTivity (Raspberry Pi kit)**](gsg-kit.md)
 
