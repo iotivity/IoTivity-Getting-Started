@@ -71,9 +71,17 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    /usr/bin/otgc.sh
    ```
 
-   The client application loads, and your server device (which, in this simulation, is simply another process on your PC) appears in the list.
+   **Troubleshooting:** If the previous steps ran correctly, then the client application loads, and your server device (which, in this simulation, is simply another process on your PC) appears in the list.
 
    ![client application loads](/Images/client-application-loads.png)
+
+   If the previous steps ran incorrectly and the client application fails to load or an error is returned, use this workaround:
+
+   ```
+   curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
+   ```
+
+   This script takes several minutes to run. Upon a successful run and installation, you'll need to OK a pop-up software agreement. 
 
 4. Click the server device in the list and click the Onboard button.
 
