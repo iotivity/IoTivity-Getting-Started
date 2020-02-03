@@ -82,13 +82,13 @@ You’re now ready to install IoTivity code and samples.
 
 ## Install IoTivity and Pi Samples
 
-1. Continuing on your development PC, from the SSH prompt, go to the home directory and install IoTivity:
+1. Continuing on your development PC, from the SSH prompt, go to the home directory and install the server app, which takes several minutes to complete:
 
    ```
    cd ~
    curl https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash
    ```
-   If you’ve done this previously and get an error, you may need to delete the ~/Project-Scripts directory.
+   Alternatively, you can download the install.sh script, review and run it from anywhere.
 
 2. Install manufacturer certificates:
 
@@ -101,18 +101,16 @@ You’re now ready to install IoTivity code and samples.
 3. Install the project scripts:
 
    ```
-   [curl]() https://openconnectivity.github.io/Project-Scripts/install.sh | bash
+   curl https://openconnectivity.github.io/Project-Scripts/install.sh | bash
    ```
 
    Rerun this script, if an error occurs.
 
-4. Install the repository containing sample code, answering “y” when prompted:
+4. Install the repository containing sample code, which takes several minutes to run. Answer “y” when prompted:
 
    ```
    curl https://openconnectivity.github.io/Emulator-Code/emulator/install.sh | bash
    ```
-
-   This script takes several minutes to run.
 
 5. Build the sample project in a new directory:
 
@@ -137,19 +135,20 @@ You’re now ready to install IoTivity code and samples.
    sudo raspi-config #enter the Pi account password, if prompted.
    ```
    
-   In the Raspberry Pi Software Configuration Tool (raspi-config) menu, choose:
-   **Localisation Options** or **Internalization Options**
-   **Change Keyboard Layout**
+2. In the Raspberry Pi Software Configuration Tool (raspi-config) menu, choose:
 
-   Select your connected keyboard and preferred keyboard layout. For example, for American English, choose **English (US)**. Navigate through the menus to **save** and **exit** raspi-config.
+   * **Localisation Options** or **Internalization Options**
+   * **Change Keyboard Layout**
+
+   Select your keyboard and preferred keyboard layout. For example, for American English, after you select your connected keyboard, choose **English (US)**. Navigate through the menus to **save** and **exit** raspi-config.
 
    Then sudo reboot:
-   
+
    ```
    sudo reboot
    ```
 
-2. On the Pi, create a project directory:
+3. On the Pi, create a project directory:
 
    ```
    cd ~
@@ -157,14 +156,14 @@ You’re now ready to install IoTivity code and samples.
    cd workspace
    ```
 
-3. Create the IoTivity project:
+4. Create the IoTivity project:
 
    ```
    /home/pi/workspace/create_project.sh myexample
    cd myexample
    ```
 
-4. Copy the sample project to the current directory and set it up:
+5. Copy the sample project to the current directory and set it up:
 
    ```
    cp ~/Sample-Raspberry-Pi-Code/IoTivity-lite/explorer-hat-pro/setup.sh .
@@ -201,19 +200,61 @@ The server app is now waiting for commands from the client app, which you’ll i
 
 ## Install and Run the Client App
 
-1. To build otgc-linux, open a terminal window on your development PC and type:
+The sample client application is called OTGC (Onboarding Tool and Generic Client). It's prebuilt, so you'll just install the binary with a script:
+
+1. Open a terminal window on your development PC.
+
+2. Download and install the Linux OTGC client by running this command, which takes several minutes to complete:
 
    ```
    curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
    ```
 
-   If an error occurs, manually run the dpkg command from the setup.sh script:
-   
+   **Troubleshooting:** If an error occurs, manually run the dpkg command from the setup.sh script.
+
    ```
    sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
    ```
 
-2. Run OTGC [define/describe] and onboard and control the emulated light on Linux. (create separate task with its own heading Click the discover button to search for OCF devices on the same network.
+3. Launch the Linux OTGC client by running this command:
+
+   ```
+   /usr/bin/otgc.sh
+   ```
+
+   ![/usr/bin/otgc.sh](/Images/usr-bin-otgc.sh.png)
+
+4. Click to OK an End User License Agreement that pops up in your default browser.
+
+   ![client application loads](/Images/client-application-loads.png)
+
+   When the OTGC starts, it automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
+
+5. Locate and align both the terminal window that had been waiting on incoming connections plus the app window, so that both are visible. 
+
+   As you proceed with the remaining steps in this section, notice the console output in the server terminal, which responds to actions taken in the client app. This simulates controlling your smart home device with, for example, a mobile phone client:
+
+   - Click to select the device and click the Onboard button.
+
+     ![select device and onboard](/Images/onboard-button.png)
+
+     The Select OTM (Ownership Transfer Method) dialog box pops up.
+
+   - OK the Select OTM dialog box.
+
+     ![select OTM](/Images/set-device-name.png)
+
+     The Select OTM dialog box closes as device ownership is transferred. The Set Device Name dialog box pops up.
+
+   - Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
+
+     In this example, the device name will be changed to server_lite_####.
+
+   - Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. 
+
+     ![toggle value switch](/Images/toggle-switch.png)
+
+6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 ***
    **[Todo Concrete: Write this step's description]**
    **[Todo Concrete: insert screenshot of Linux client screen, callout to discover button]**

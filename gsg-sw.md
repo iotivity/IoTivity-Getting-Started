@@ -25,15 +25,15 @@ To carry out this tutorial, you need the following:
 
 ## Install and Run the Server App
 
-1. On the Linux PC, open a terminal.
+1. On the development PC, open a terminal.
 
-2. Download source and set up the IoTivity-Lite environment by running this command:
+2. Download source and set up the IoTivity-Lite environment by running this command, which takes several minutes to complete:
 
    ```
    curl https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash 
    ```
 
-   Alternatively, you can download the install.sh script, review it, and run it from anywhere. 
+   Alternatively, you can download the install.sh script, review and run it from anywhere. 
 
 3. Generate code for the server app by running these commands:
 
@@ -55,52 +55,67 @@ The server app is now waiting for commands from the client app, which you’ll i
 
 ## Install and Run the Client App
 
-The sample client application is called OTGC (Onboarding Tool and Generic Client). It’s prebuilt, so you’ll just install the binary with a script.
+The sample client application is called OTGC (Onboarding Tool and Generic Client). It's prebuilt, so you'll just install the binary with a script:
 
-1. Open another terminal.
+1. On the development PC, open a terminal window.
 
-2. Download and install the Linux OTGC client by running this command:
+2. Download and install the Linux OTGC client by running this command, which takes several minutes to complete:
 
    ```
-   curl https://openconnectivityfoundation.github.io/development-support/otgc/linux/install.sh | bash
+   curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
    ```
 
+   **Troubleshooting:** If an error occurs, manually run the dpkg command from the setup.sh script.
+
+   ```
+sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
+   ```
+   
 3. Launch the Linux OTGC client by running this command:
 
    ```
    /usr/bin/otgc.sh
    ```
 
-   **Troubleshooting:** If the previous steps ran correctly, then the client application loads, and your server device (which, in this simulation, is simply another process on your PC) appears in the list.
+   ![/usr/bin/otgc.sh](/Images/usr-bin-otgc.sh.png)
+
+4. Click to OK an End User License Agreement that pops up in your default browser.
 
    ![client application loads](/Images/client-application-loads.png)
 
-   If the previous steps ran incorrectly and the client application fails to load or an error is returned, use this workaround:
+   When the OTGC starts, it automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
 
-   ```
-   curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
-   ```
+5. Locate and align both the terminal window that had been waiting on incoming connections plus the app window, so that both are visible. 
 
-   This script takes several minutes to run. Upon a successful run and installation, you'll need to OK a pop-up software agreement. 
+   As you proceed with the remaining steps in this section, notice the console output in the server terminal, which responds to actions taken in the client app. This simulates controlling your smart home device with, for example, a mobile phone client:
 
-4. Click the server device in the list and click the Onboard button.
+   - Click to select the device and click the Onboard button.
 
-   ![onboard button](/Images/onboard-button.png)
+     ![select device and onboard](/Images/onboard-button.png)
 
-5. Change the device name, if you wish, and click OK.
+     The Select OTM (Ownership Transfer Method) dialog box pops up.
 
-6. In the Generic Client tab, toggle the Value switch on and off. 
+   - OK the Select OTM dialog box.
 
-   ![value switch](/Images/toggle-switch.png)
+     ![select OTM](/Images/set-device-name.png)
 
-   Notice that the console output in the server terminal responds to the actions in the client. This simulates controlling your smart home device with, for example, a mobile phone client.
+     The Select OTM dialog box closes as device ownership is transferred. The Set Device Name dialog box pops up.
 
-7. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
+   - Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
+
+     In this example, the device name will be changed to server_lite_####.
+
+   - Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. 
+
+     ![toggle value switch](/Images/toggle-switch.png)
+
+9. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 
 ## Customize the Code
 
 ***
 **[Todo OCF: This section needs verification and some detail where noted]**
+
 ***
 
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
@@ -132,9 +147,17 @@ The steps below will show you how to make a simple change to the JSON file, reco
    /usr/bin/otgc.sh
    ```
 
-6.	As before, select the discovered device. Notice the changed capabilities.
+6. As you observed in Step 5 of the **Install and Run the Client App** section above, notice how the console output in the server terminal responds to actions taken in the client app:
+
+   * Click to select the device and click the Onboard button.
+   * OK the Select OTM dialog box.
+   * Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
+   * Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off.
+
+7. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 ***
 **[Todo Concrete: after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
+
 ***
 
 ## Run on Separate Devices
