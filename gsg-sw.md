@@ -19,7 +19,7 @@ The two apps talk to each other over a loopback connection, using the OCF protoc
 
 ## Requirements
 
-To carry out this tutorial, you need the following:
+To carry out this tutorial, you will need the following:
 
 - A Debian-based Linux PC (e.g., Ubuntu), with an internet connection.
 
@@ -33,7 +33,7 @@ To carry out this tutorial, you need the following:
    curl https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash 
    ```
 
-   Alternatively, you can download the install.sh script, review and run it from anywhere. 
+   Alternatively, you can download the install.sh script, review and run it from any location. 
 
 3. Generate code for the server app by running these commands:
 
@@ -51,13 +51,13 @@ To carry out this tutorial, you need the following:
    ./run.sh
    ```
 
-The server app is now waiting for commands from the client app, which you’ll install next.
+Leave this terminal window open. The server app is now waiting for commands from the client app, which you’ll install next.
 
 ## Install and Run the Client App
 
 The sample client application is called OTGC (Onboarding Tool and Generic Client). It's prebuilt, so you'll just install the binary with a script:
 
-1. On the development PC, open a terminal window.
+1. On the development PC, open another terminal window.
 
 2. Download and install the Linux OTGC client by running this command, which takes several minutes to complete:
 
@@ -68,7 +68,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    **Troubleshooting:** If an error occurs, manually run the dpkg command from the setup.sh script.
 
    ```
-sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
+sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb #run only in the event of an error
    ```
    
 3. Launch the Linux OTGC client by running this command:
@@ -79,17 +79,17 @@ sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
 
    ![/usr/bin/otgc.sh](/Images/usr-bin-otgc.sh.png)
 
-4. Click to OK an End User License Agreement that pops up in your default browser.
+4. Click to OK the End User License Agreement.
 
    ![client application loads](/Images/client-application-loads.png)
 
-   When the OTGC starts, it automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
+   OTGC starts and automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
 
-5. Locate and align both the terminal window that had been waiting on incoming connections plus the app window, so that both are visible. 
+5. Locate and align both the terminal window that is awaiting incoming connections, plus the app window, so that both are visible. 
 
-   As you proceed with the remaining steps in this section, notice the console output in the server terminal, which responds to actions taken in the client app. This simulates controlling your smart home device with, for example, a mobile phone client:
+   As you proceed with the remaining steps in this section, notice that each action taken in the client app generates console output in the terminal window that had been awaiting incoming connections. This simulates controlling your smart home device with, for example, a mobile phone client:
 
-   - Click to select the device and click the Onboard button.
+   - Click to select the device listed in the left-hand pane, and click the Onboard button.
 
      ![select device and onboard](/Images/onboard-button.png)
 
@@ -99,13 +99,13 @@ sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
 
      ![select OTM](/Images/set-device-name.png)
 
-     The Select OTM dialog box closes as device ownership is transferred. The Set Device Name dialog box pops up.
+     As device ownership is transferred, the Select OTM dialog box closes and is replaced by the Set Device Name dialog box.
 
-   - Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
+   - Change the device name, if you wish. Click OK to close the dialog box.
 
      In this example, the device name will be changed to server_lite_####.
 
-   - Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. 
+   - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off. 
 
      ![toggle value switch](/Images/toggle-switch.png)
 

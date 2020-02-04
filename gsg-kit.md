@@ -13,7 +13,7 @@ This Getting Started guide will show you how to quickly download, build, and run
 
 The two apps talk to each other over Wi-Fi, using the OCF protocol. 
 
-![OCF protocol](/Images/communication-over-ocf-protocol.png)
+![OCF protocol](/Images/communication-over-ocf-protocol.png | width ="50%")
 
 ## Requirements
 
@@ -46,7 +46,7 @@ As an alternative to using SSH (per steps provided in this section), attach a mo
 
 1. Open a terminal on your development PC.
 
-2. Get the Raspberry Pi board’s IP address by giving this command, then pressing ctrl-C. Use the host name of the Pi (or replace with the current hostname, if Pi name had been changed):
+2. Learn the Raspberry Pi board’s IP address by giving this command, then pressing ctrl-C. Use the host name of the Pi (or replace with the current hostname, if Pi name had been changed):
 
    ```
    ping raspberrypi.local
@@ -196,7 +196,7 @@ The sample project now has Explorer HAT drivers installed and is ready for code 
    ./run.sh
    ```
 
-The server app is now waiting for commands from the client app, which you’ll install next.
+Leave this terminal window open. The server app is now waiting for commands from the client app, which you’ll install next.
 
 ## Install and Run the Client App
 
@@ -213,7 +213,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    **Troubleshooting:** If an error occurs, manually run the dpkg command from the setup.sh script.
 
    ```
-   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb
+   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb #run only in the event of an error
    ```
 
 3. Launch the Linux OTGC client by running this command:
@@ -222,42 +222,32 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    /usr/bin/otgc.sh
    ```
 
-   ![/usr/bin/otgc.sh](/Images/usr-bin-otgc.sh.png)
+4. Click to OK the End User License Agreement.
 
-4. Click to OK an End User License Agreement that pops up in your default browser.
+   OTGC starts and automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane.
 
-   ![client application loads](/Images/client-application-loads.png)
+5. Locate and align both the terminal window that is awaiting incoming connections, plus the app window, so that both are visible. 
 
-   When the OTGC starts, it automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
+   As you proceed with the remaining steps in this section, notice that each action taken in the client app generates console output in the terminal window that had been awaiting incoming connections. This simulates controlling your smart home device with, for example, a mobile phone client:
 
-5. Locate and align both the terminal window that had been waiting on incoming connections plus the app window, so that both are visible. 
-
-   As you proceed with the remaining steps in this section, notice the console output in the server terminal, which responds to actions taken in the client app. This simulates controlling your smart home device with, for example, a mobile phone client:
-
-   - Click to select the device and click the Onboard button.
-
-     ![select device and onboard](/Images/onboard-button.png)
+   - Click to select the device listed in the left-hand pane, and click the Onboard button.
 
      The Select OTM (Ownership Transfer Method) dialog box pops up.
 
    - OK the Select OTM dialog box.
 
-     ![select OTM](/Images/set-device-name.png)
+     As device ownership is transferred, the Select OTM dialog box closes and is replaced by the Set Device Name dialog box.
 
-     The Select OTM dialog box closes as device ownership is transferred. The Set Device Name dialog box pops up.
+   - Change the device name, if you wish. Click OK to close the dialog box.
 
-   - Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
-
-     In this example, the device name will be changed to server_lite_####.
-
-   - Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. 
-
-     ![toggle value switch](/Images/toggle-switch.png)
+   - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off. 
 
 6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 ***
    **[Todo Concrete: Write this step's description]**
    **[Todo Concrete: insert screenshot of Linux client screen, callout to discover button]**
+**[Todo Concrete: Relocate the following steps so that flow is chronological]**
+
 ***
 3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
 ***
