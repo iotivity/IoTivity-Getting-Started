@@ -13,7 +13,7 @@ This Getting Started guide will show you how to quickly download, build, and run
 
 The two apps talk to each other over Wi-Fi, using the OCF protocol. 
 
-![OCF protocol](/Images/communication-over-ocf-protocol.png | width ="50%")
+![OCF protocol](/Images/communication-over-ocf-protocol.png)
 
 ## Requirements
 
@@ -247,7 +247,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 ***
 
 ***
-**[Todo OCF: These steps will need to be relocated so the flow is chronological]**
+**[Todo OCF: These steps will need to be renumbered/relocated so the flow is chronological]**
 ***
 
 6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
