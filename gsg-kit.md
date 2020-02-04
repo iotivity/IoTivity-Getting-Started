@@ -242,34 +242,38 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off. 
 
-6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 ***
-   **[Todo Concrete: Write this step's description]**
-   **[Todo Concrete: insert screenshot of Linux client screen, callout to discover button]**
-**[Todo Concrete: Relocate the following steps so that flow is chronological]**
+**[Todo OCF: We could not successfully execute the steps outlined below.]**
+***
+
+***
+**[Todo OCF: These steps will need to be relocated so the flow is chronological]**
+***
+
+6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 
 ***
 3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
 ***
-   **[Todo Concrete: insert screenshot of Linux client screen, callout to + button]**
+   **[Todo OCF: insert screenshot of Linux client screen, callout to + button]**
 ***
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
 
 4.	Once the + icon has changed to a gear, click the gear icon.
 ***
-   **[Todo Concrete: insert screenshot with callout to gear]**
+   **[Todo OCF: insert screenshot with callout to gear]**
 ***
 
 5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
 ***
-   **[Todo Concrete: insert screenshot /LED section with callout to value button]**
+   **[Todo OCF: insert screenshot /LED section with callout to value button]**
 ***
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
 
 6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
 
 ***
-   **[Todo Concrete: insert screenshot]**
+   **[Todo OCF: insert screenshot]**
 ***
 
    Notice that the output in the OTGC app detects the touches.
@@ -313,7 +317,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 6.	As before, select the discovered device. Notice the changed capabilities.
 ***
-**[Todo Concrete: after OCF provides detail in step 3 above: insert screenshot of relevant section in OTGC with callout to changes]**
+**[Todo OCF: Based on the detail in step 3 above, insert screenshot of relevant section in OTGC with callout to changes]**
 ***
 
 ## Digging deeper: Next steps for development
