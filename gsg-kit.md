@@ -246,31 +246,28 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 **[Todo OCF: We could not successfully execute the steps outlined below.]**
 ***
 
-***
-**[Todo OCF: These steps will need to be renumbered/relocated so the flow is chronological]**
-***
 
 6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 
 ***
-3.	Onboard (pair) the discovered server by clicking the + icon next to the device.
+7.	Onboard (pair) the discovered server by clicking the + icon next to the device.
 ***
    **[Todo OCF: insert screenshot of Linux client screen, callout to + button]**
 ***
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
 
-4.	Once the + icon has changed to a gear, click the gear icon.
+8.	Once the + icon has changed to a gear, click the gear icon.
 ***
    **[Todo OCF: insert screenshot with callout to gear]**
 ***
 
-5.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
+9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
 ***
    **[Todo OCF: insert screenshot /LED section with callout to value button]**
 ***
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
 
-6.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
+10.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
 
 ***
    **[Todo OCF: insert screenshot]**
@@ -278,7 +275,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    Notice that the output in the OTGC app detects the touches.
 
-7. Press Ctrl-C in the server terminal on the Pi to exit the server app.
+11. Press Ctrl-C in the server terminal on the Pi to exit the server app.
 
 ## Customize the Code
 
