@@ -128,9 +128,9 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 3. Add a dimming resource. The example.json file will now have two resources: binary switch and dimming.  
 
-   ...
+   ```
    [
-   
+    
     {
      "path" : "/binaryswitch",
      "rt"   : [ "oic.r.switch.binary" ],
@@ -144,7 +144,8 @@ The steps below will show you how to make a simple change to the JSON file, reco
       "remove_properties" : [ "range", "step", "value" , "id" , "precision"]
      }
    ]
-   ...
+   ```
+
    
    Save your changes.
 
