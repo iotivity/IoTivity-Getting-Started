@@ -1,6 +1,6 @@
 ![IoTivity logo](/Images/IoTivity-logo.png)
 
-[**Getting Started**](index.md)   |   [**Getting Started FAQ**](getting-started-faq.md)   |   [**Digging Deeper**](digging-deeper.md)   |   [**GitHub Repository**](https://github.com/iotivity/iotivity-lite)   |   [**IoTivity.org**](https://iotivity.org)
+[**Getting Started**](index.md)   |   [**Getting Started FAQ**](getting-started-faq.md)   |   [**Digging Deeper**](digging-deeper.md)   |   [**GitHub Repository**](https://github.com/iotivity/iotivity-lite)   |   [**Wiki**](https://wiki.iotivity.org/start)   |   [**IoTivity.org**](https://iotivity.org)
 
 # Getting Started with IoTivity (Device Simulation)
 
@@ -113,6 +113,11 @@ sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.7.0.deb #run only in the event
 
 ## Customize the Code
 
+***
+**[Todo OCF: This section needs verification and some detail where noted]**
+
+***
+
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
 
 The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the changes you made to the server’s capabilities in the JSON file are reflected in the client app. 
@@ -126,27 +131,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 2. Open the example.json file in your preferred editor. 
 
-3. Add a dimming resource. The example.json file will now have two resources: binary switch and dimming.  
-
-   ...
-   [
-   
-    {
-     "path" : "/binaryswitch",
-     "rt"   : [ "oic.r.switch.binary" ],
-     "if"   : ["oic.if.baseline", "oic.if.a" ],
-     "remove_properties" : [ "range", "step" , "id", "precision" ]
-    },
-     {
-      "path" : "/dimming",
-      "rt"   : [ "oic.r.light.dimming" ],
-      "if"   : ["oic.if.baseline", "oic.if.a" ],
-      "remove_properties" : [ "range", "step", "value" , "id" , "precision"]
-     }
-   ]
-   ...
-   
-   Save your changes.
+3. **[Todo OCF: Insert here the editing changes that user will make]**
 
 4. While still in the ~/iot-lite/ directory, generate the server code, build, and run:
 

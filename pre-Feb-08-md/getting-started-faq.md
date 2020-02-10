@@ -1,6 +1,6 @@
 ![IoTivity logo](/Images/IoTivity-logo.png)
 
-[**Getting Started**](index.md)   |   [**Getting Started FAQ**](getting-started-faq.md)   |   [**Digging Deeper**](digging-deeper.md)   |   [**GitHub Repository**](https://github.com/iotivity/iotivity-lite)   |   [**IoTivity.org**](https://iotivity.org)
+[**Getting Started**](index.md)   |   [**Getting Started FAQ**](getting-started-faq.md)   |   [**Digging Deeper**](digging-deeper.md)   |   [**GitHub Repository**](https://github.com/iotivity/iotivity-lite)   |   [**Wiki**](https://wiki.iotivity.org/start)   |   [**IoTivity.org**](https://iotivity.org)
 
 # Getting Started FAQ
 
@@ -22,4 +22,5 @@ If you're having issues getting started with IoTivity-Lite, these common questio
 * **What is "IoTivity-constrained?"**
   * IoTivity-Constrained is the former name for IoTivity-Lite; they're the same thing. IoTivity-Lite is the newer and correct name, although the constrained term still hangs around on some URLs, etc. For more info on IoTivity-Lite, visit [About IoTivity-Lite](https://iotivity.org/about-iotivity-lite).
 * **Still no luck?**
-  * Ask your question on the [IoTivity-dev email reflector](iotivity-dev@lists.iotivity.org).
+**[Todo OCF: need the correct mailto link]**
+  * Ask your question on the **IoTivity-dev email reflector**.
