@@ -242,36 +242,21 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off. 
 
-***
-**[Todo OCF: We could not successfully execute the steps outlined below.]**
-***
+6. **[Todo OCF: We could not successfully execute the remaining steps.]** Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 
-
-6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
-
-***
-7.	Onboard (pair) the discovered server by clicking the + icon next to the device.
-***
-   **[Todo OCF: insert screenshot of Linux client screen, callout to + button]**
-***
+7.	Onboard (pair) the discovered server by clicking the + icon next to the device. **[Todo OCF: insert screenshot of Linux client screen, callout to + button]**
+   
    If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
 
-8.	Once the + icon has changed to a gear, click the gear icon.
-***
-   **[Todo OCF: insert screenshot with callout to gear]**
-***
+8.	Once the + icon has changed to a gear, click the gear icon. **[Todo OCF: insert screenshot with callout to gear]**
 
-9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left.
-***
-   **[Todo OCF: insert screenshot /LED section with callout to value button]**
-***
+9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left. **[Todo OCF: insert screenshot /LED section with callout to value button]**
+   
    The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
 
 10.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3.
 
-***
    **[Todo OCF: insert screenshot]**
-***
 
    Notice that the output in the OTGC app detects the touches.
 
@@ -281,6 +266,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
 ***
 **[Todo OCF: This section needs verification and some detail where noted]**
+**[It should not be the same example as in the SW Simulation tutorial. It should be device-relevant.]
 ***
 
 IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
