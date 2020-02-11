@@ -22,4 +22,4 @@ If you're having issues getting started with IoTivity-Lite, these common questio
 * **What is "IoTivity-constrained?"**
   * IoTivity-Constrained is the former name for IoTivity-Lite; they're the same thing. IoTivity-Lite is the newer and correct name, although the constrained term still hangs around on some URLs, etc. For more info on IoTivity-Lite, visit [About IoTivity-Lite](https://iotivity.org/about-iotivity-lite).
 * **Still no luck?**
-  * Ask your question on the [IoTivity-dev email reflector](iotivity-dev@lists.iotivity.org).
+  * Ask your question on the [IoTivity-dev email reflector](mailto:iotivity-dev@lists.iotivity.org).
