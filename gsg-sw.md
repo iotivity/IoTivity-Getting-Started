@@ -192,15 +192,9 @@ Now that you’ve run a quick simulation on your own development PC and experien
 
 A workshop kit includes a Pimoroni input/output board that is used to demonstrate the capabilities of IoTivity. If you already have a Raspberry Pi board and don’t want to order the full kit, you can run a simpler demonstration.
 
-### [Tutorial for Raspberry Pi kit with input/output](gsg-kit.md)
+### [Tutorial for Raspberry Pi kit](gsg-kit.md)
 
-Sample project code and instructions for kit including Raspberry Pi and Pimoroni Explorer HAT input/output board.
-
-### Tutorial for plain Raspberry Pi with output only
-***
-   **[Todo OCF: If we want to support a bare Raspberry Pi board, we need this tutorial information]**
-***
-Sample project code and instructions for bare Raspberry Pi board. This works following the same process as the Pimoroni example, just from a different directory.
+Sample project code and instructions for kit including Raspberry Pi and an optional Pimoroni Explorer HAT input/output board.
 
 ## Digging deeper: Next steps for development
 
