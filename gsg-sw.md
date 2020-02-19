@@ -194,7 +194,7 @@ A workshop kit includes a Pimoroni input/output board that is used to demonstrat
 
 ### [Tutorial for Raspberry Pi kit](gsg-kit.md)
 
-Sample project code and instructions for kit including Raspberry Pi and an optional Pimoroni Explorer HAT input/output board.
+Sample project code and instructions for kit including Raspberry Pi and a Pimoroni Explorer HAT input/output board.
 
 ## Digging deeper: Next steps for development
 
