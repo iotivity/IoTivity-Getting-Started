@@ -69,7 +69,10 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    **Troubleshooting:** If the build process completes, but an error occurs, manually run the dpkg command from the setup.sh script.
 
    ```
-   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb #run only in the event of an error and substitute the version of otgc that is available at this location (for example, the version number will increment as new versions are created (e.g. otgc-2.10.0.deb))
+   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb 
+   #run only in the event of an error and substitute the version of otgc 
+   #that is available at this location (for example, the version number will 
+   #increment as new versions are created (e.g. otgc-2.10.0.deb))
    ```
 
 3. Launch the Linux OTGC client by running this command:
@@ -175,7 +178,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
    * Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
    * Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. You can also now enter a dimming value in the text box for the new dimming control. Hit Tab to change the value on the server. You should see the new value in the server window.
 
-7. Offboard the sever by selecting it and clicking on the offboard button.
+7. Offboard the server by selecting it and clicking on the offboard button.
 
 8. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 ***
