@@ -54,13 +54,13 @@ To carry out this tutorial, you will need the following:
 
 Leave this terminal window open. The server app is now waiting for commands from the client app, which you’ll install next.
 
-## Install and Run the Client App
+## Build and Run the Client App
 
 The sample client application is called OTGC (Onboarding Tool and Generic Client). Build the Linux version by executing the script as described below:
 
 1. On the development PC, open another terminal window.
 
-2. Download and install the Linux OTGC client by running this command, which takes several minutes to complete:
+2. Download and build the Linux OTGC client by running this command, which takes several minutes to complete:
 
    ```
    curl https://openconnectivity.github.io/otgc-linux/setup.sh | bash
