@@ -329,10 +329,10 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 8.	Once the + icon has changed to a gear, click the gear icon. **[Todo OCF: insert screenshot with callout to gear]**
 
 
-9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left. **[Todo OCF: insert screenshot /LED section with callout to value button]** The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client. **[Todo OCF: what will the user do or see if they are using the "nohat" project?]**
+9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left. **[Todo OCF: insert screenshot /LED section with callout to value button]** The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client. If you do not have the Explorer HAT board, the green light on the Pi will flash.
 
 
-10.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3. **[Todo OCF: insert screenshot]** Notice that the output in the OTGC app detects the touches.  **[Todo OCF: what will the user do or see if they are using the "nohat" project?]**
+10.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3. **[Todo OCF: insert screenshot]** Notice that the output in the OTGC app detects the touches. (This step does not apply if you do not have the Explorer HAT board.)
 
 
 11. Press Ctrl-C in the server terminal on the Pi to exit the server app.
