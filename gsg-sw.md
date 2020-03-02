@@ -181,10 +181,7 @@ The steps below will show you how to make a simple change to the JSON file, reco
 7. Offboard the server by selecting it and clicking on the offboard button.
 
 8. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
-***
-**[Todo OCF: Based on the detail in step 3 above, insert screenshot of relevant section in OTGC with callout to changes]**
 
-***
 
 ## Run on Separate Devices
 
