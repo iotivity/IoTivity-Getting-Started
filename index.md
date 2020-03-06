@@ -16,8 +16,12 @@ These 15-30 minute tutorials walk through installing, building, and using client
 
 [**Getting Started with IoTivity (Device Simulation)**](gsg-sw.md)
 
-- Quickly simulates smart device usage by running client and server apps on the same Linux PC, using the OCF protocol to communicate over loopback.
+- Quickly simulates smart device usage by running client and command-line server apps on the same Linux PC, using the OCF protocol to communicate over loopback.
 
+[**Getting Started with IoTivity (Graphical Device Simulation)**](gsg-gtk.md)
+
+- In this example you build a server with a graphical user interface (GUI). The GUI also has a switch and a slider, so you can make changes on the server and observe them in the client. We are still running both the client and the server on the same machine in loopback mode.
+
 [**Getting Started with IoTivity (Raspberry Pi kit)**](gsg-kit.md)
 
 - Experience realistic smart device usage with a Raspberry Pi kit ([purchase here](https://openconnectivity.org/developer/developer-kit), under <u>Development Resources and Solutions</u>). The kit provides for a more immersive experience. With the kit and a Linux or Android client app, you can control a Raspberry Pi equipped with colored LEDs and capacitive touch buttons on an add-on board.
