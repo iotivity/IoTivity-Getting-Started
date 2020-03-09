@@ -122,7 +122,7 @@ Leave the terminal window open. The server app is now waiting for commands from 
 
 ## Build and Run the Client App (If you've already installed OTGC once, you can skip the installation here and jump to step 3.)
 
-NOTE: Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (http://dfslfjsdf). You can then just run it and skip the Linux OTGC installation in the steps below. The circle icon will start the discovery process and should find the Raspberry Pi server (make sure you're on the same LAN).
+NOTE: Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (https://github.com/openconnectivity/otgc-android). You can then just run it and skip the Linux OTGC installation in the steps below. The circle icon will start the discovery process and should find the Raspberry Pi server (make sure you're on the same LAN).
 
 The sample client application is called OTGC (Onboarding Tool and Generic Client). You'll download and build the binary with a script:
 
