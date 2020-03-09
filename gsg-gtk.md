@@ -43,7 +43,7 @@ To carry out this tutorial, you will need the following:
    Rerun this script if an error occurs.
 
 
-4. Install the repository containing emulator sample code, which takes several minutes to run. Answer “y” if prompted:
+4. Install the repository containing emulator sample code. Answer “y” if prompted:
 
 
    ```
@@ -185,7 +185,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
 
 
-6. **[Todo OCF: We could not successfully execute the remaining steps.]** Quit the client app and then press Ctrl-C in the server terminal to exit the process.
+6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
 
 
 7.	Onboard (pair) the discovered server by clicking the + icon next to the device. **[Todo OCF: insert screenshot of Linux client screen, callout to + button]** If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
@@ -194,10 +194,10 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 8.	Once the + icon has changed to a gear, click the gear icon. **[Todo OCF: insert screenshot with callout to gear]**
 
 
-9.	Find the /light sections and click the switch button on the left. **[Todo OCF: insert screenshot /LED section with callout to value button]** The light bulb animation will turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
+9.	Find the /light sections and click the switch value button on the left. **[Todo OCF: insert screenshot /LED section with callout to value button]** The light bulb animation will turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client.
 
 
-10.	Now “observe” (monitor) the touch buttons on the emulator window in the OTGC app by turning on the "observe" button on the switch and dimmer sections of OTGC, then clicking the switch button or dimming slider on emulator application. **[Todo OCF: insert screenshot]** Notice that the output in the OTGC app detects the changes in the emulator application. (This step does not apply if you do not have the Explorer HAT board.)
+10.	Now “observe” (monitor) the touch buttons on the emulator window in the OTGC app by turning on the "observe" button on the /switch and /dimmer sections of OTGC, then clicking the switch button or dimming slider on the emulator application. **[Todo OCF: insert screenshot]** Notice that the output in the OTGC app detects the changes in the emulator application. (This step does not apply if you do not have the Explorer HAT board.)
 
 
 11. Press Ctrl-C in the server terminal or click the "X" in the emulator window to exit the server app.
