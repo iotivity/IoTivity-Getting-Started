@@ -2,33 +2,28 @@
 
 [**Getting Started**](index.md)   |   [**Getting Started FAQ**](getting-started-faq.md)   |   [**Digging Deeper**](digging-deeper.md)   |   [**GitHub Repository**](https://github.com/iotivity/iotivity-lite)   |   [**IoTivity.org**](https://iotivity.org)
 
-# Getting Started with IoTivity (Linux graphical user interface (GUI) using GTK)
+This guide will show you how to download, build, and run two simulated devices on the same Linux PC:
 
-## Introduction
+- The *server*, a GUI app in this case, simulates a smart home dimmable light. The switch and dimmer can be adjusted from the server GUI. This simulates a physical dimming light switch.
+- The *client*, a GUI app, controls the smart device. The client typically runs on a smart phone.
 
-This Getting Started guide will show you how to quickly download, build, and run IoTivity apps, featuring two-way communication between a Linux or Android device and a Linux dimmable light emulator server with a GUI and controls on the server. This simple platform enables you to quickly prototype the capabilities of your planned smart device:
+The two apps talk to each other over a loopback connection, using the OCF protocol.
 
-- The *server*, a command-line app, runs here as a GUI emulator of a smart home device, such as a smart switch or smart thermostat. In this case, this is represented by emulator code on the Linux machine of a dimmable light.
+![OCF protocol over loopback connection](/Images/ocfprotocol-loopback-connection.png)
 
-- The *client*, a GUI app, controls the smart device from a Linux computer or Android tablet.
-
-The two apps talk to each other via a loopback connection on the same machine, using the OCF (Open Connectivity Foundation) protocol. This also works for the code running on a different Linux machine if that machine is on the same local area network.
-
-
-![OCF protocol](/Images/communication-over-ocf-protocol.png)
-
+**To use Windows:** To download, build, and run on a Windows PC instead, check the Iotivity [FAQ](https://wiki.iotivity.org/getting_started_troubleshooting_and_faq).
 
 ## Requirements
 
 To carry out this tutorial, you will need the following:
 
-- Linux computer
-
+- A Debian-based Linux PC (e.g., Ubuntu), with an internet connection.
 
 ## Install IoTivity and Emulator Sample
 
-1. Continuing on your development PC, from the terminal prompt, go to the home directory and install the IoTivity-lite development system, which takes a few minutes to complete:
+1. On the development PC, open a terminal.
 
+2. Download source and set up the IoTivity-Lite environment by running this command, which takes several minutes to complete:
 
    ```
    cd ~
@@ -38,7 +33,7 @@ To carry out this tutorial, you will need the following:
    Alternatively, you can download the install.sh script, review and run it from anywhere.
 
 
-2. Install the project scripts:
+3. Install the project scripts:
 
 
    ```
@@ -55,9 +50,13 @@ To carry out this tutorial, you will need the following:
    curl https://openconnectivity.github.io/Emulator-Code/emulator/install.sh | bash
    ```
 
-   You may need to reboot the Raspberry Pi at this point to ensure that your environment variables are set.
+   You may need to run source ~/.bashrc or reboot the computer at this point to ensure that your environment variables are set.
 
   ```
+  source ~/.bashrc
+
+  or
+
   sudo reboot -h now
   ```
 
