@@ -163,7 +163,7 @@ You’re now ready to install IoTivity code and samples.
    Rerun this script if an error occurs.
 
 
-4. Install the repository containing emulator sample code, which takes several minutes to run. Answer “y” if prompted:
+4. Install the repository containing the Raspberry Pi sample code, which takes several minutes to run. Answer “y” if prompted:
 
 
    ```
@@ -212,7 +212,7 @@ The sample project now has Explorer HAT (or no HAT) drivers installed and is rea
 1. On the Pi, generate code for the server app by running these commands:
 
    ```
-   cd ~/iot-lite/ #or path where you installed IoTivity
+   cd ~/workspace/myexample (if not already there)
    gen.sh
    ```
 
