@@ -15,7 +15,7 @@ The two apps talk to each other over a loopback connection, using the OCF protoc
 
 ## Requirements
 
-To carry out this tutorial, you will need the following:
+To carry out this tutorial as tested, you will need the following:
 
 - A Debian-based Linux PC (e.g., Ubuntu), with an internet connection.
 
@@ -122,9 +122,9 @@ Leave the terminal window open. The server app is now waiting for commands from 
 
 ## Build and Run the Client App (If you've already installed OTGC once, you can skip the installation here and jump to step 3.)
 
-NOTE: Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (https://github.com/openconnectivity/otgc-android). You can then just run it and skip the Linux OTGC installation in the steps below. The circle icon will start the discovery process and should find the Emulator server.
+NOTE: The instructions below are for building and running the OTGC client application on Linux. Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (https://github.com/openconnectivity/otgc-android). You can then just run it and skip the Linux OTGC installation in the steps below. If you run the Android app, you can basically follow the instructions is step % below. The circle icon will start the discovery process and should find the Emulator server.
 
-The sample client application is called OTGC (Onboarding Tool and Generic Client). You'll download and build the binary with a script:
+The sample client application is called OTGC (Onboarding Tool and Generic Client). On Linux, you'll download and build the binary with a script:
 
 1. On the development PC, open another terminal window.
 
@@ -143,7 +143,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    #increment as new versions are created (e.g. otgc-2.10.0.deb))
    ```
 
-3. Launch the Linux OTGC client by running this command:
+3. Launch the Linux OTGC client by running this command (or locate and click the application icon):
 
 
    ```
@@ -154,7 +154,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 4. Click to OK the End User License Agreement.
 
 
-   OTGC starts and automatically scans all visible OCF devices, listing them in the app's left-hand pane.
+   OTGC starts and automatically scans all visible OCF devices, listing them in the app's left-hand pane. If you want to restart the discovery process, click on the discovery button or (on Android) the circular arrow button.
 
 
 5. Locate and align both the terminal window that is awaiting incoming connections, plus the app window, so that both are visible.
@@ -166,13 +166,9 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    - Click to select the device listed in the left-hand pane, then click the Onboard button.
 
 
-
      The Select OTM (Ownership Transfer Method) dialog box pops up.
 
-
-
-   - Click OK in the Select OTM dialog box.
-
+   - Choose an onboarding security method (any should work) from the drop-down selector and click OK in the Select OTM dialog box.
 
 
      As device ownership is transferred, the Select OTM dialog box closes and is replaced by the Set Device Name dialog box.
@@ -182,13 +178,6 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
 
    - Click to reselect the device in the left-hand pane.
-
-
-6.	Onboard (pair) the discovered server by clicking the + icon next to the device. If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
-
-
-8.	Once the + icon has changed to a gear, click the gear icon.
-
 
 9.	In OTGC, find the /binaryswitch and /dimming sections and click the switch value button on the left. The light bulb animation will turn on or off, controlled by the client app over the OCF protocol. Also, the dimming slider will move from 0 to 100. If you change the dimming value (type <Tab> to get the value accepted), the dimmer slider in the GUI should reflect what you type and the light animation should change. If you type 100, the light should turn on fully and the binary switch should turn on. Notice that the console output in the server terminal also responds to your actions in the client.
 
@@ -202,7 +191,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 ## Digging deeper: Next steps for development
 
 
-Now that you've created a device simulation based on IoTivity, you're read to dig deeper to explore other platforms and learn how to apply IoTivity to your own platform and devices.
+Now that you've created a device simulation based on IoTivity, you're ready to dig deeper to explore other platforms and learn how to apply IoTivity to your own platform and devices. The next example creates a server on actual hardware (Raspberry Pi).
 
 
 [**Digging Deeper**](digging-deeper.md)

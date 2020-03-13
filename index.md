@@ -6,21 +6,21 @@
 
 IoTivity is an open source framework that implements the [OCF](https://openconnectivity.org) (Open Connectivity Foundation) protocol for easy, secure device-to-device communication for IoT devices. IoTivity includes the following:
 
-- A reference implementation of **client software** -- for example, the OTGC (Onboarding Tool and Generic Client) app for controlling a smart home or other IoT device (available on Linux or Android)
+- A reference implementation of **client software** -- the OTGC (Onboarding Tool and Generic Client) app for controlling a smart home or other IoT device (available on Linux or Android)
 - A reference implementation of **server software** that runs on the actual IoT device
 - **Tools that generate code** for the server, based on a JSON file that you will create to describe your device’s capabilities
 
 # Learning to Use IoTivity
 
-These 15-30 minute tutorials walk through installing, building, and using client and server software applications that rely on IoTivity capabilities. Then, the Digging Deeper section provides the how-to and reference information needed to implement IoTivity on your own device.
+These 15-30 minute tutorials walk through installing, building, and using client and server software applications that rely on IoTivity capabilities. The Digging Deeper section provides the how-to and reference information needed to implement IoTivity on your own custom device.
 
 [**Getting Started with IoTivity (Device Simulation)**](gsg-sw.md)
 
-- Quickly simulates smart device usage by running client and command-line server apps on the same Linux PC, using the OCF protocol to communicate over loopback.
+- Quickly simulates OCF smart device development and usage by running client and command-line server apps on the same Linux PC, using the OCF protocol to communicate over loopback.
 
 [**Getting Started with IoTivity (Graphical Device Simulation)**](gsg-gtk.md)
 
-- In this example you build a server with a graphical user interface (GUI). The GUI also has a switch and a slider, so you can make changes on the server and observe them in the client. We are still running both the client and the server on the same machine in loopback mode.
+- This example shows how to build a server with a graphical user interface (GUI). In addition to a graphical light bulb, this GUI  has a switch and a slider, so you can make changes on the server and observe them in the client. Both the client and the server run on the same machine in loopback mode.
 
 [**Getting Started with IoTivity (Raspberry Pi kit)**](gsg-kit.md)
 

@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This Getting Started guide will show you how to quickly download, build, and run IoTivity apps, featuring two-way communication between a Linux or Android device and a Raspberry Pi with an add-in Pimoroni board. This simple platform enables you to quickly prototype the capabilities of your planned smart device:
+This Getting Started guide will show you how to quickly download, build, and run IoTivity apps, featuring two-way communication between a Linux or Android device and a Raspberry Pi with an add-in Pimoroni board. This simple platform enables you to quickly prototype the capabilities of your planned smart device on real hardware:
 
 - The *server*, a command-line app, runs on a smart home device, such as a smart switch or smart thermostat, represented by the Raspberry Pi board.
 
@@ -22,13 +22,13 @@ The two apps talk to each other over Wi-Fi, using the OCF (Open Connectivity Fou
 
 To carry out this tutorial, you will need the following:
 
-- Raspberry Pi board with microSD card with Raspbian OS
+- Raspberry Pi board with a microSD card with Raspbian OS
 
 - Pimoroni Explorer HAT board
 
 - Optional: HDMI monitor and cable for the Pi
 
-- Optional: USB mouse for the Pi
+- Optional: USB keyboard and mouse for the Pi
 
 - Ethernet or Wi-Fi connection between a DHCP-enabled network and the Pi
 
@@ -41,7 +41,7 @@ The first two listed items are sold together as a kit [here](https://openconnect
 ## Set up the Raspberry Pi
 
 
-1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (At this point, you don’t need the blue breadboard, which may be attached later.)
+1. *Before* connecting power, attach the Explorer HAT board to the GPIO header on the Raspberry Pi. Be careful not to bend the pins, as the connector fits very tightly. (For this example, you don’t need the blue breadboard, which may be attached later.)
 
 
    ![OCF protocol](/Images/attach-HAT-plus-blue-board.png)
@@ -62,7 +62,7 @@ The first two listed items are sold together as a kit [here](https://openconnect
 ## Connect to the Raspberry Pi
 
 
-The steps in this section use SSH. As an alternative, attach a monitor and USB keyboard to the Raspberry Pi.
+The steps in this section use SSH to open a monitor on your personal computer that will let you type commands for the Raspberry Pi. As an alternative, attach a monitor and USB keyboard directly to the Raspberry Pi.
 
 
 1. Open a terminal on your development PC.
@@ -242,7 +242,7 @@ Leave this terminal window open. The server app is now waiting for commands from
 
 ## Build and Run the Client App (If you've already installed OTGC once, you can skip the installation here and jump to step 3.)
 
-NOTE: Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (http://dfslfjsdf). You can then just run it and skip the Linux OTGC installation in the steps below. The circle icon will start the discovery process and should find the Raspberry Pi server (make sure you're on the same LAN).
+NOTE: The instructions below are for building and running the OTGC client application on Linux. Alternatively, you can run the Android version of OTGC on your smart phone or tablet. Get the installation package here: (https://github.com/openconnectivity/otgc-android). You can then just run it and skip the Linux OTGC installation in the steps below. If you run the Android app, you can basically follow the instructions is step % below. The circle icon will start the discovery process and should find the Emulator server.
 
 The sample client application is called OTGC (Onboarding Tool and Generic Client). You'll download and build the binary with a script:
 
@@ -277,7 +277,7 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    OTGC starts and automatically scans all visible OCF devices, listing them in the app's left-hand pane.
 
 
-5. Locate and align both the terminal window that is awaiting incoming connections, plus the app window, so that both are visible.
+5. Locate and align both the terminal window that is awaiting incoming connections (as well as the dimming light GUI), plus the app window, so that both are visible.
 
 
    As you proceed with the remaining steps in this section, notice that each action taken in the client app generates console output in the terminal window that had been awaiting incoming connections. This simulates controlling your smart home device with, for example, a mobile phone client:
@@ -304,17 +304,10 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off.
 
 
-
-6. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
-
-
-7.	Onboard (pair) the discovered server by clicking the + icon next to the device. If the item has a gear icon instead of a + icon, it has already been onboarded. You can select the server and click Offboard to prepare to see the onboarding process.
-
-
 8.	Once the + icon has changed to a gear, click the gear icon.
 
 
-9.	Find the /LED1, /LED2, and /LED3 sections and in each, click the switch button on the left. The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client. If you do not have the Explorer HAT board, the green light on the Pi will flash.
+9.	Find the /LED1, /LED2, /LED3 and /LED4 sections and in each, click the switch button on the left. The colored LEDs on the Explorer HAT board turn on or off, controlled by the client app over the OCF protocol. Notice that the console output in the server terminal on the Pi responds to your actions in the client. If you do not have the Explorer HAT board, the green light on the Pi will flash.
 
 
 10.	Now “observe” (monitor) the touch buttons on the Explorer HAT board in the OTGC app by clicking the switch buttons on the right of the /touch1, /touch2, and /touch3 sections. Physically touch the buttons on the board numbered 1, 2, and 3. Notice that the output in the OTGC app detects the touches. (This step does not apply if you do not have the Explorer HAT board.)
@@ -323,64 +316,6 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 11. Press Ctrl-C in the server terminal on the Pi to exit the server app.
 
 
-## Customize the Code
-
-IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
-
-
-
-
-
-The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the changes you made to the server’s capabilities in the JSON file are reflected in the client app.
-
-
-
-
-
-1. On your development PC, back up the example.json file:
-
-
-
-
-
-   ```
-   cd ~/iot-lite/
-   cp example.json example.json.bak
-   ```
-
-
-
-
-
-2. Open the example.json file in your preferred editor.
-
-
-3. **[Todo OCF: Insert here the editing changes that user will make]**
-
-
-4. While still in the ~/iot-lite/ directory, generate the server code, build, and run:
-
-
-   ```
-   ./gen.sh
-   ./build.sh
-   ./run.sh
-   ```
-
-
-5. Run the client app:
-
-
-   ```
-   /usr/bin/otgc.sh
-   ```
-
-
-6.	As before, select the discovered device. Notice the changed capabilities.
-
-
-***
-**[Todo OCF: Based on the detail in step 3 above, insert screenshot of relevant section in OTGC with callout to changes]**
 ***
 
 
