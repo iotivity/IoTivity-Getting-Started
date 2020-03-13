@@ -69,9 +69,9 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    **Troubleshooting:** If the build process completes, but an error occurs, manually run the dpkg command from the setup.sh script.
 
    ```
-   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb 
-   #run only in the event of an error and substitute the version of otgc 
-   #that is available at this location (for example, the version number will 
+   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb
+   #run only in the event of an error and substitute the version of otgc
+   #that is available at this location (for example, the version number will
    #increment as new versions are created (e.g. otgc-2.10.0.deb))
    ```
 
@@ -136,21 +136,26 @@ The steps below will show you how to make a simple change to the JSON file, reco
 3. Add a dimming resource. The example.json file will now have two resources: binary switch and dimming.  
 
    ```
-   [
-
-    {
-     "path" : "/binaryswitch",
-     "rt"   : [ "oic.r.switch.binary" ],
-     "if"   : ["oic.if.baseline", "oic.if.a" ],
-     "remove_properties" : [ "range", "step" , "id", "precision" ]
-    },
-     {
-      "path" : "/dimming",
-      "rt"   : [ "oic.r.light.dimming" ],
-      "if"   : ["oic.if.baseline", "oic.if.a" ],
-      "remove_properties" : [ "range", "step", "value" , "id" , "precision"]
-     }
-   ]
+[
+  {
+    "path" : "/binaryswitch",
+    "rt"   : [ "oic.r.switch.binary" ],
+    "if"   : ["oic.if.baseline", "oic.if.a" ],
+    "remove_properties" : [ "range", "step" , "id", "precision" ]
+  },
+  {
+    "path" : "/dimming",
+    "rt"   : [ "oic.r.light.dimming" ],
+    "if"   : ["oic.if.baseline", "oic.if.a" ],
+    "remove_properties" : [ "range", "step", "value" , "id" , "precision" ]
+  },
+  {
+    "path" : "/oic/p",
+    "rt"   : [ "oic.wk.p" ],
+    "if"   : ["oic.if.baseline", "oic.if.r" ],
+    "remove_properties" : [ "n", "range", "value", "step", "precision", "vid"  ]
+  }
+]
    ```
 
 
@@ -181,7 +186,10 @@ The steps below will show you how to make a simple change to the JSON file, reco
 7. Offboard the server by selecting it and clicking on the offboard button.
 
 8. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
+***
+**[Todo OCF: Based on the detail in step 3 above, insert screenshot of relevant section in OTGC with callout to changes]**
 
+***
 
 ## Run on Separate Devices
 
