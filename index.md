@@ -46,7 +46,7 @@ These 15-30 minute tutorials walk through installing, building, and using client
 
 
 
-- Experience realistic smart device usage with a Raspberry Pi kit ([more info here](https://openconnectivity.org/developer/developer-kit). The kit provides for a more immersive experience. With the kit and a Linux or Android client app, you can control a Raspberry Pi equipped with colored LEDs and capacitive touch buttons on an add-on board.
+- Experience realistic smart device usage with a Raspberry Pi kit ([more info here](https://openconnectivity.org/developer/developer-kit)). The kit provides for a more immersive experience. With the kit and a Linux or Android client app, you can control a Raspberry Pi equipped with colored LEDs and capacitive touch buttons on an add-on board.
 
 
 
