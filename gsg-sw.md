@@ -9,7 +9,7 @@
 This guide will show you how to download, build, and run two simulated devices on the same Linux PC:
 
 - The *server*, a command-line app, simulates a smart home device such as a smart switch.
-- The *client*, a GUI app, controls the smart device. The client typically runs on a smart phone.
+- The *client*, a GUI app, controls the smart device. While this example uses a Linux client application, the client typically runs on a smart phone.
 
 The two apps talk to each other over a loopback connection, using the OCF protocol.
 
@@ -52,7 +52,7 @@ To carry out this tutorial, you will need the following:
    ./run.sh
    ```
 
-Leave this terminal window open. The server app is now waiting for commands from the client app, which you’ll install next.
+The server device is now running. Leave this terminal window open. The server app is waiting for commands from the client app, which you’ll install next.
 
 ## Build and Run the Client App
 
@@ -69,9 +69,9 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
    **Troubleshooting:** If the build process completes, but an error occurs, manually run the dpkg command from the setup.sh script.
 
    ```
-   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb 
-   #run only in the event of an error and substitute the version of otgc 
-   #that is available at this location (for example, the version number will 
+   sudo dpkg -i ./otgc-linux/build/debian/out/otgc-2.9.0.deb
+   #run only in the event of an error and substitute the version of otgc
+   #that is available at this location (for example, the version number will
    #increment as new versions are created (e.g. otgc-2.10.0.deb))
    ```
 
@@ -83,13 +83,13 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    ![/usr/bin/otgc.sh](/Images/usr-bin-otgc.sh.png)
 
-4. Click to OK the End User License Agreement.
+4. Click to OK to accept the End User License Agreement.
 
    ![client application loads](/Images/client-application-loads.png)
 
    OTGC starts and automatically scans all visible OCF (Open Connectivity Foundation) devices, listing them in the app's left-hand pane. In the screen above, the device found is called server_lite_3173.
 
-5. Locate and align both the terminal window that is awaiting incoming connections, plus the app window, so that both are visible.
+5. For a clear view, locate and align both the terminal window that is awaiting incoming connections and the app window, so that both are visible.
 
    As you proceed with the remaining steps in this section, notice that each action taken in the client app generates console output in the terminal window that had been awaiting incoming connections. This proves that you are controlling your smart home device:
 
@@ -97,9 +97,9 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
      ![select device and onboard](/Images/onboard-button.png)
 
-     The Select OTM (Ownership Transfer Method) dialog box pops up.
+     The Select OTM (Ownership Transfer Method) dialog box pops up. Any of the available security methods should work.
 
-   - OK the Select OTM dialog box.
+   - OK the Selected OTM in the dialog box.
 
      ![select PKI for the most rigorous security OTM](/Images/set-device-name.png)
 
@@ -107,20 +107,20 @@ The sample client application is called OTGC (Onboarding Tool and Generic Client
 
    - Change the device name, if you wish. Click OK to close the dialog box.
 
-     In this example, the device name will be changed to server_lite_####.
+     In this example, the device name is shown as server_lite_3173.
      The bar to the left of the device will turn green indicating that the device is now owned by your copy of OTGC.
 
    - Click to reselect the device in the left-hand pane. In the Generic Client tab, toggle the Value switch on and off. You should see the monitor window for the server device indicating true and false as you change the state of the switch.
 
      ![toggle value switch](/Images/toggle-switch.png)
 
-8. Click the offboard button to relinquish your ownership and return the security state to Ready For Onboarding Transfer Method (RFOTM)
+8. When you are done controlling the switch, click the offboard button to relinquish your ownership and return the security state to Ready For Onboarding Transfer Method (RFOTM)
 
 9. Quit the client app and then press Ctrl-C in the server terminal to stop the server device.
 
 ## Customize the Code
 
-IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from example.json file, found in the ~/iot-lite/ directory on your development PC.
+IoTivity provides a tool for automatically generating server code as a significant head start for your software development. The code generation tool works from a JSON file created by you that describes the capabilities of your device. The server code you compiled and ran in this tutorial began from the file named example.json, found in the ~/iot-lite/ directory on your development PC.
 
 The steps below will show you how to make a simple change to the JSON file, recompile, and run the server and client. You can then see how the changes you made to the server’s capabilities in the JSON file are reflected in the client app.
 
@@ -133,24 +133,29 @@ The steps below will show you how to make a simple change to the JSON file, reco
 
 2. Open the example.json file in your preferred editor. This can be easily done with the ./edit_input.sh script or you can open the example.json file with your favorite text editor.
 
-3. Add a dimming resource. The example.json file will now have two resources: binary switch and dimming.  
+3. Add a dimming resource as indicated below. The example.json file will now have two resources: binary switch and dimming. The other resource is for the device platform and will not be displayed in the client application.
 
    ```
-   [
-
-    {
-     "path" : "/binaryswitch",
-     "rt"   : [ "oic.r.switch.binary" ],
-     "if"   : ["oic.if.baseline", "oic.if.a" ],
-     "remove_properties" : [ "range", "step" , "id", "precision" ]
-    },
-     {
-      "path" : "/dimming",
-      "rt"   : [ "oic.r.light.dimming" ],
-      "if"   : ["oic.if.baseline", "oic.if.a" ],
-      "remove_properties" : [ "range", "step", "value" , "id" , "precision"]
-     }
-   ]
+[
+  {
+    "path" : "/binaryswitch",
+    "rt"   : [ "oic.r.switch.binary" ],
+    "if"   : ["oic.if.baseline", "oic.if.a" ],
+    "remove_properties" : [ "range", "step" , "id", "precision" ]
+  },
+  {
+    "path" : "/dimming",
+    "rt"   : [ "oic.r.light.dimming" ],
+    "if"   : ["oic.if.baseline", "oic.if.a" ],
+    "remove_properties" : [ "range", "step", "value" , "id" , "precision" ]
+  },
+  {
+    "path" : "/oic/p",
+    "rt"   : [ "oic.wk.p" ],
+    "if"   : ["oic.if.baseline", "oic.if.r" ],
+    "remove_properties" : [ "n", "range", "value", "step", "precision", "vid"  ]
+  }
+]
    ```
 
 
@@ -178,23 +183,28 @@ The steps below will show you how to make a simple change to the JSON file, reco
    * Change the device name, if you wish, and click OK to close the Set Device Name dialog box.
    * Click to reselect the device. In the Generic Client tab, toggle the Value switch on and off. You can also now enter a dimming value in the text box for the new dimming control. Hit Tab to change the value on the server. You should see the new value in the server window.
 
+
 7. Offboard the server by selecting it and clicking on the offboard button.
 
 8. Quit the client app and then press Ctrl-C in the server terminal to exit the process.
-
+***
 
 ## Run on Separate Devices
 
-Now that you’ve run a quick simulation on your own development PC and experienced the basic flow, you can get a better picture of IoTivity capabilities by running it on a Raspberry Pi board, where you can control and read its status from the same OTGC Linux application or you can download and run OTGC on an Android phone or tablet.
+Now that you’ve run a quick simulation on your own development PC and experienced the basic flow, you can get a better picture of IoTivity capabilities by running it on an emulated device with a graphical user interface (GUI), or a Raspberry Pi board, where you can control and read its status from the same OTGC Linux application or you can download and run OTGC on an Android phone or tablet.
 
-A workshop kit includes a Pimoroni input/output board that is used to demonstrate the capabilities of IoTivity. If you already have a Raspberry Pi board and don’t want to order the full kit, you can run a simpler demonstration.
+If you want to run the GUI example, you can run it on the same PC used in this example.
+
+For the Raspberry Pi example, a workshop kit includes a Pimoroni input/output board that is used to further demonstrate the capabilities of IoTivity.
 
 ### [Tutorial for Raspberry Pi kit](gsg-kit.md)
 
-Sample project code and instructions for kit including Raspberry Pi and a Pimoroni Explorer HAT input/output board.
+This sample project includes code and instructions for demonstrating OCF and IoTivity on real hardware. The kit includes a Raspberry Pi computer and a Pimoroni Explorer HAT input/output board.
 
 ## Digging deeper: Next steps for development
 
-Now that you've created a device simulation based on IoTivity, you're read to dig deeper to explore other platforms and learn how to apply IoTivity to your own platform and devices. Use the same steps described in this tutorial, just edit the JSON input file (e.g. example.json) to include the resources on your particular device. Currently, there are examples for Linux, Windows, Raspberry Pi, Dragon Board and Arduino. New platforms are being added as developers contribute working examples.
+Now that you've created a device simulation based on IoTivity, you're ready to dig deeper and explore OCF development with IoTivity for your own platform and devices. Use the same steps described in this tutorial, just edit the JSON input file (e.g. example.json) to include the resources on your particular device.
+
+Currently, there are development resources Windows and Linux -- including Raspberry Pi, Qualcomm Dragon Board and Arduino. New platforms are being added as developers contribute working examples.
 
 [**Digging Deeper**](digging-deeper.md)
